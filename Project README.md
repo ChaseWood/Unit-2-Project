@@ -11,7 +11,7 @@ A react app that searches Magic: The Gathering cards.
 
 ## API
 
-Scryfall Api holds all the information that you could ever need for a MTG card.
+- [Scryfall](https://scryfall.com/docs/api) Api holds all the information that you could ever need for a MTG card.
 
 ```
 object": "card",
@@ -19,7 +19,7 @@ object": "card",
 "oracle_id": "9feb7600-f844-4573-bcb7-d6b34473517b",
 ```
 
-- [Link to API](https://api.scryfall.com/cards/named?exact=dreadwurm)
+- [Link to data for an individual card.](https://api.scryfall.com/cards/named?exact=dreadwurm)
 
 ## Wireframes
 
