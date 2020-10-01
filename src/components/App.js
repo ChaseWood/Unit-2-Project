@@ -1,5 +1,14 @@
-import React from "react";
+import React from 'react';
+import { Route, Link, Switch } from 'react-router-dom';
+import Home from './Home';
 
-export const App = (props) => {
-  return <h1>Hello World</h1>;
-};
+function App() {
+	return (
+		<div>
+			<h1>Hello World</h1>
+			<Home />
+		</div>
+	);
+}
+
+export default App;
