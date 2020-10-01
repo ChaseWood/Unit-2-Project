@@ -22,7 +22,6 @@ function Home() {
 	useEffect(() => {
 		makeApiCall();
 	}, []);
-	// console.log('this is card img', card.image_uris.large);
 
 	let cardData = '';
 	if (card) {
@@ -32,10 +31,9 @@ function Home() {
 
 		cardData = (
 			<div className='data'>
-				{/* <img src={newUri} alt='card'></img> */}
+				<img src={card.image_uris && card.image_uris.small} alt='card'></img>
 				<div>{card.name}</div>
 				<div>{card.flavor_text}</div>
-				{/* <div>{card.keywords[0]}</div> */}
 			</div>
 		);
 	}
@@ -44,3 +42,5 @@ function Home() {
 }
 
 export default Home;
+
+// seems like I am having the same problems again with not being able to go one level deeper...trying to pull anything past the first level of objects comes back undefined even though I am waiting for the "card" state
