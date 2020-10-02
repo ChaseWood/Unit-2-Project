@@ -7,7 +7,7 @@
 
 ## Project Description
 
-A react app that searches Magic: The Gathering cards.
+A react app that searches and filters Magic: The Gathering cards. Also shows up to date pricing information per card. 
 
 ## API
 
