@@ -24,14 +24,10 @@ function Home() {
 	}, []);
 
 	let cardData = '';
-	if (card) {
-		// const uri = card.image_uris.small;
-		// const newUri = uri.substring(0, uri.lastIndexOf('?'));
-		// console.log('this is newURI', newUri);
-
+	if (card.name) {
 		cardData = (
 			<div className='data'>
-				<img src={card.image_uris && card.image_uris.small} alt='card'></img>
+				<img src={card.image_uris.small} alt='card'></img>
 				<div>{card.name}</div>
 				<div>{card.flavor_text}</div>
 			</div>
