@@ -1,11 +1,14 @@
 import React from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
+import Header from './Header';
 import Home from './Home';
+import SearchForm from './SearchForm';
 
 function App() {
 	return (
 		<div>
-			<h1>Hello World</h1>
+			<Header />
+			<SearchForm />
 			<Home />
 		</div>
 	);
