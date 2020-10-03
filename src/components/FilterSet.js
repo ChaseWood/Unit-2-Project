@@ -10,9 +10,7 @@ function FilterSet(props) {
 	};
 
 	const makeApiCall = async (card) => {
-		const res = await fetch(
-			'https://api.scryfall.com//cards/search?order=cmc&q=c%3Ared+pow%3D3'
-		);
+		const res = await fetch('https://api.scryfall.com//cards/search?q=e%3Awar');
 		const json = await res.json();
 
 		setSet(json);
