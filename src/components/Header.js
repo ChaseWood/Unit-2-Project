@@ -15,6 +15,7 @@ function Header(props) {
 	const handleClick = (event) => {
 		console.log('this is handleSubmit', cardName);
 		props.handleSubmitCard(cardName);
+		preventDefault();
 	};
 
 	return (
@@ -28,7 +29,7 @@ function Header(props) {
 						className='mr-sm-2'
 						onChange={handleChange}
 					/>
-					<Button type='submit' variant='outline-info' onSubmit={handleClick}>
+					<Button type='submit' variant='outline-info' onClick={handleClick}>
 						Search
 					</Button>
 				</Form>
