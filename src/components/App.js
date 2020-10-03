@@ -10,9 +10,7 @@ function App() {
 	console.log('this is card', card);
 
 	const makeApiCall = async (card) => {
-		const res = await fetch(
-			`https://api.scryfall.com/cards/named?exact=${card}`
-		);
+		const res = await fetch(`https://api.scryfall.com/cards/${card}`);
 		const json = await res.json();
 
 		console.log('this is json data', json);
@@ -22,11 +20,11 @@ function App() {
 	};
 
 	useEffect(() => {
-		makeApiCall('cancel');
+		makeApiCall('random');
 	}, []);
 
 	const handleSubmit = (cardName) => {
-		makeApiCall(cardName);
+		makeApiCall(`named?exact=${cardName}`);
 	};
 
 	return (
