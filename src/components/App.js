@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
 import Header from './Header';
 import RandomCard from './RandomCard';
+import Filter from './Filter';
 
 const mtgApi = 'https://api.scryfall.com/cards/';
 
@@ -29,8 +30,9 @@ function App() {
 
 	return (
 		<div>
-			<Header handleSubmit={handleSubmit} />
-			<RandomCard card={card} />
+			{/* <Header handleSubmit={handleSubmit} /> */}
+			{/* <RandomCard card={card} /> */}
+			<Filter />
 		</div>
 	);
 }
