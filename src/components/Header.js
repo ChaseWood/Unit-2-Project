@@ -12,24 +12,24 @@ function Header(props) {
 		setCardName(event.target.value);
 	};
 
-	const handleClick = (event) => {
+	const handleSubmit = (event) => {
 		console.log('this is handleSubmit', cardName);
-		props.handleSubmitCard(cardName);
-		preventDefault();
+		props.handleSubmit(cardName);
+		event.preventDefault();
 	};
 
 	return (
 		<>
 			<Navbar bg='dark' variant='dark' fixed='top'>
 				<Navbar.Brand href='#home'>MTG Card Search</Navbar.Brand>
-				<Form inline className='container'>
+				<Form inline className='container' onSubmit={handleSubmit}>
 					<FormControl
 						type='text'
 						placeholder='Name'
 						className='mr-sm-2'
 						onChange={handleChange}
 					/>
-					<Button type='submit' variant='outline-info' onClick={handleClick}>
+					<Button type='click' variant='outline-info'>
 						Search
 					</Button>
 				</Form>

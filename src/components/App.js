@@ -3,11 +3,16 @@ import { Route, Link, Switch } from 'react-router-dom';
 import Header from './Header';
 import RandomCard from './RandomCard';
 
+const mtgApi = 'https://api.scryfall.com/cards/';
+
 function App() {
 	const [card, setCard] = useState({});
+	console.log('this is card', card);
 
-	const makeApiCall = async () => {
-		const res = await fetch('https://api.scryfall.com/cards/random');
+	const makeApiCall = async (card) => {
+		const res = await fetch(
+			`https://api.scryfall.com/cards/named?exact=${card}`
+		);
 		const json = await res.json();
 
 		console.log('this is json data', json);
@@ -17,16 +22,16 @@ function App() {
 	};
 
 	useEffect(() => {
-		makeApiCall();
+		makeApiCall('cancel');
 	}, []);
 
-	//this useState is setting the state to what was searched for in header to pass down to randomCard
-
-	// this is getting the cardName from Header
+	const handleSubmit = (cardName) => {
+		makeApiCall(cardName);
+	};
 
 	return (
 		<div>
-			<Header />
+			<Header handleSubmit={handleSubmit} />
 			<RandomCard card={card} />
 		</div>
 	);
