@@ -8,7 +8,7 @@ function Filter(props) {
 	return (
 		<Form className='container'>
 			<FilterType />
-			<FilterColor />
+			{/* <FilterColor /> */}
 			<FilterSet />
 		</Form>
 	);
