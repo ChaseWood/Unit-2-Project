@@ -3,11 +3,14 @@ import { Route, Link, Switch } from 'react-router-dom';
 import Header from './Header';
 import RandomCard from './RandomCard';
 import Filter from './Filter';
+import SearchBar from './SearchBar';
 
 const mtgApi = 'https://api.scryfall.com/cards/';
 
 function App() {
 	const [card, setCard] = useState({});
+	const [setCode, setSetCode] = useState('');
+
 	console.log('this is card', card);
 
 	const makeApiCall = async (card) => {
@@ -31,10 +34,13 @@ function App() {
 	return (
 		<div>
 			{/* <Header handleSubmit={handleSubmit} /> */}
+			<SearchBar handleSubmit={handleSubmit} />
+			{/* <Filter /> */}
 			{/* <RandomCard card={card} /> */}
-			<Filter />
 		</div>
 	);
 }
 
 export default App;
+
+// useContext or props to pass state back up from grandchild to be used here at APP to change the

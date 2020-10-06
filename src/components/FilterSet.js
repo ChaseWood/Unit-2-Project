@@ -3,10 +3,11 @@ import Form from 'react-bootstrap/Form';
 
 function FilterSet(props) {
 	const [set, setSet] = useState({});
+	const [setCode, setSetCode] = useState('');
 
 	const handleChange = (event) => {
-		console.log('this is set', set.data);
-		setSet(event.target.value);
+		console.log('this is setCode', setCode);
+		setSetCode(event.target.value);
 	};
 
 	const makeApiCall = async (card) => {
@@ -27,7 +28,11 @@ function FilterSet(props) {
 
 	const newFilterArr = set[0]
 		? set.map((item) => {
-				return <option key={item.id}>{item.name}</option>;
+				return (
+					<option value={item.code} key={item.id}>
+						{item.name}
+					</option>
+				);
 		  })
 		: null;
 
@@ -39,12 +44,6 @@ function FilterSet(props) {
 					<Form.Label>What set is it in?</Form.Label>
 					<Form.Control as='select' onChange={handleChange}>
 						{newFilterArr}
-						{/* <option></option>
-						<option>{set[0].name}</option>
-						<option>Blue</option>
-						<option>Black</option>
-						<option>Red</option>
-						<option>Green</option> */}
 					</Form.Control>
 				</Form.Group>
 			</div>

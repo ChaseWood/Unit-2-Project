@@ -7,7 +7,7 @@ import FilterSet from './FilterSet';
 function Filter(props) {
 	return (
 		<Form className='container'>
-			<FilterType />
+			{/* <FilterType /> */}
 			{/* <FilterColor /> */}
 			<FilterSet />
 		</Form>
