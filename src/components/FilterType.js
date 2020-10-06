@@ -5,7 +5,6 @@ function FilterType(props) {
 	const [type, setType] = useState('');
 
 	const handleChange = (event) => {
-		console.log('this is type', type);
 		setType(event.target.value);
 	};
 
@@ -15,15 +14,17 @@ function FilterType(props) {
 				<Form.Label>Type</Form.Label>
 				<Form.Control as='select' onChange={handleChange}>
 					<option></option>
-					<option>Artifact</option>
-					<option>Creature</option>
-					<option>Enchantment</option>
-					<option>Instant</option>
-					<option>Sorcery</option>
-					<option>Land</option>
+					<option value='+t%3Aartifact'>Artifact</option>
+					<option value='+t%3Acreature'>Creature</option>
+					<option value='+t%3Aenchantment'>Enchantment</option>
+					<option value='+t%3Ainstant'>Instant</option>
+					<option value='+t%3Asorcery'>Sorcery</option>
+					<option value='+t%3Aland'>Land</option>
 				</Form.Control>
 			</Form.Group>
 		</div>
 	);
 }
 export default FilterType;
+
+// https://api.scryfall.com/cards/search?q=t%3Aartifact

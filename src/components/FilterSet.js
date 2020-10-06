@@ -6,7 +6,6 @@ function FilterSet(props) {
 	const [setCode, setSetCode] = useState('');
 
 	const handleChange = (event) => {
-		console.log('this is setCode', setCode);
 		setSetCode(event.target.value);
 	};
 
@@ -19,8 +18,6 @@ function FilterSet(props) {
 
 		setSet(newArr);
 	};
-
-	console.log('this is set2', set);
 
 	useEffect(() => {
 		makeApiCall();
@@ -43,6 +40,7 @@ function FilterSet(props) {
 				<Form.Group controlId='exampleForm.ControlSelect1'>
 					<Form.Label>What set is it in?</Form.Label>
 					<Form.Control as='select' onChange={handleChange}>
+						<option></option>
 						{newFilterArr}
 					</Form.Control>
 				</Form.Group>
@@ -54,5 +52,3 @@ function FilterSet(props) {
 }
 
 export default FilterSet;
-
-// https://api.scryfall.com//cards/search?q=e%3Awar

@@ -39,7 +39,7 @@ function App() {
 			<SearchBar />
 			<Filter />
 			{/* <RandomCard card={card} /> */}
-			<SingleCard />
+			{/* <SingleCard /> */}
 		</div>
 	);
 }

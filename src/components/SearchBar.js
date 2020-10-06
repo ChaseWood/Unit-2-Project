@@ -39,7 +39,12 @@ function SearchBar(props) {
 						type='text'
 						onChange={handleChange}
 						placeholder='Search'></Form.Control>
-					<Button type='submit' variant='primary' size='sm' block>
+					<Button
+						className='mt-2'
+						type='submit'
+						variant='primary'
+						size='sm'
+						block>
 						Submit
 					</Button>
 					<Button variant='secondary' size='sm' block>
