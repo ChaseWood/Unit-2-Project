@@ -9,7 +9,8 @@ const mtgApi = 'https://api.scryfall.com/cards/';
 
 function App() {
 	const [card, setCard] = useState({});
-	const [setCode, setSetCode] = useState('');
+	const [fuzzySearch, setFuzzySearch] = useState([]);
+	// const [setCode, setSetCode] = useState('');
 
 	console.log('this is card', card);
 
@@ -34,7 +35,7 @@ function App() {
 	return (
 		<div>
 			{/* <Header handleSubmit={handleSubmit} /> */}
-			<SearchBar handleSubmit={handleSubmit} />
+			<SearchBar />
 			{/* <Filter /> */}
 			{/* <RandomCard card={card} /> */}
 		</div>

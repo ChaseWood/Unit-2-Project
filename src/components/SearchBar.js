@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import SearchBarResults from './SearchBarResults';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
-function SearchBar() {
-	const [fuzzySearch, setFuzzySearch] = useState([]);
-	const [fuzzySearchArray, setFuzzySearchArray] = useState(['search']);
+function SearchBar(props) {
+	const [fuzzySearch, setFuzzySearch] = useState('');
+	const [fuzzySearchArray, setFuzzySearchArray] = useState([]);
+	const [clickSubmit, setClickSubmit] = useState(false);
 
 	const makeApiCall = async () => {
 		const res = await fetch(
@@ -13,7 +15,7 @@ function SearchBar() {
 		const json = await res.json();
 
 		setFuzzySearchArray(json.data);
-		console.log('this is fuzzySearchArray', fuzzySearchArray);
+		// console.log('this is fuzzySearchArray', fuzzySearchArray);
 	};
 
 	const handleChange = (event) => {
@@ -24,6 +26,7 @@ function SearchBar() {
 	const handleSubmit = (event) => {
 		console.log('this is handleSubmit', fuzzySearch);
 		event.preventDefault();
+		setClickSubmit(true);
 		makeApiCall();
 	};
 
@@ -36,19 +39,23 @@ function SearchBar() {
 						type='text'
 						onChange={handleChange}
 						placeholder='Search'></Form.Control>
+					<Button type='submit' variant='primary' size='sm' block>
+						Submit
+					</Button>
+					<Button variant='secondary' size='sm' block>
+						Random Card
+					</Button>
+					<Button variant='secondary' size='sm' block>
+						Filter Cards
+					</Button>
 				</Form>
 			</Form.Group>
-			<>
-				<Button variant='primary' size='sm' block>
-					Submit
-				</Button>
-				<Button variant='secondary' size='sm' block>
-					Random Card
-				</Button>
-				<Button variant='secondary' size='sm' block>
-					Filter Cards
-				</Button>
-			</>
+			{clickSubmit === true ? (
+				<SearchBarResults
+					fuzzySearchArray={fuzzySearchArray}
+					handleSubmit={handleSubmit}
+				/>
+			) : null}
 		</div>
 	);
 }
