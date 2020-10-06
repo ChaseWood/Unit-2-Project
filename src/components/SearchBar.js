@@ -8,7 +8,7 @@ function SearchBar() {
 
 	const makeApiCall = async () => {
 		const res = await fetch(
-			`https://api.scryfall.com/cards/autocomplete?q=${fuzzySearch}`
+			`https://api.scryfall.com/cards/search?q=name%3A%2F%5C${fuzzySearch}`
 		);
 		const json = await res.json();
 
@@ -18,7 +18,6 @@ function SearchBar() {
 
 	const handleChange = (event) => {
 		setFuzzySearch(event.target.value);
-		makeApiCall();
 		console.log('this is fuzzySearch', fuzzySearch);
 	};
 
@@ -55,3 +54,6 @@ function SearchBar() {
 }
 
 export default SearchBar;
+
+// 'https://api.scryfall.com/cards/search?q=name%3A%2F%5C'
+//API to search the name field
