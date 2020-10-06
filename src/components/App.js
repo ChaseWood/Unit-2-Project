@@ -4,6 +4,7 @@ import Header from './Header';
 import RandomCard from './RandomCard';
 import Filter from './Filter';
 import SearchBar from './SearchBar';
+import SingleCard from './SingleCard';
 
 const mtgApi = 'https://api.scryfall.com/cards/';
 
@@ -36,8 +37,9 @@ function App() {
 		<div>
 			{/* <Header handleSubmit={handleSubmit} /> */}
 			<SearchBar />
-			{/* <Filter /> */}
+			<Filter />
 			{/* <RandomCard card={card} /> */}
+			<SingleCard />
 		</div>
 	);
 }
