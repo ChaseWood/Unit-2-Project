@@ -8,7 +8,7 @@ function SearchBarResults(props) {
 	const searchResultsArray = props.fuzzySearchArray[0]
 		? props.fuzzySearchArray.map((item) => {
 				return (
-					<div key={item.name}>
+					<div className='mt-2' key={item.name}>
 						<img
 							src={item.image_uris && item.image_uris.small}
 							alt={item.name}
@@ -19,7 +19,7 @@ function SearchBarResults(props) {
 		: null;
 
 	return (
-		<div class='d-flex flex-wrap justify-content-around'>
+		<div className=' d-flex flex-wrap justify-content-around align-content-between'>
 			{searchResultsArray}
 		</div>
 	);
