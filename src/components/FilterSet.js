@@ -27,7 +27,7 @@ function FilterSet(props) {
 		? set.map((item) => {
 				return (
 					<option value={item.code} key={item.id}>
-						{item.name}
+						<div>+{item.name}</div>
 					</option>
 				);
 		  })

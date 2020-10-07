@@ -8,12 +8,17 @@ import FilterNameSearch from './FilterNameSearch';
 import FilterText from './FilterText';
 
 function Filter(props) {
-	const [filterColor, setFilterColor] = useState('');
+	const [searchTerm, setSearchTerm] = useState([]);
 
-	const sendColor = (data) => {
-		setFilterColor(data);
+	const sendColor = (color) => {
+		setSearchTerm([...searchTerm, color]);
 	};
-	console.log('this is filterColor', filterColor);
+
+	const sendFormat = (format) => {
+		setSearchTerm([...searchTerm, format]);
+	};
+
+	console.log('this is searchTerm', searchTerm);
 
 	return (
 		<Form className='container'>
@@ -21,7 +26,7 @@ function Filter(props) {
 			<FilterText />
 			<FilterType />
 			<FilterColor sendColor={sendColor} />
-			<FilterFormat />
+			<FilterFormat sendFormat={sendFormat} />
 			<FilterSet />
 		</Form>
 	);

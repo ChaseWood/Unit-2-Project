@@ -6,6 +6,7 @@ function FilterFormat(props) {
 
 	const handleChange = (event) => {
 		setFormat(event.target.value);
+		props.sendFormat(format);
 	};
 
 	return (
@@ -16,7 +17,7 @@ function FilterFormat(props) {
 					<option></option>
 					<option value='+legal%3Astandard'>Standard</option>
 					<option value='+legal%3Ahistoric'>Historic</option>
-					<option value='+legal%3Amoder'>Modern</option>
+					<option value='+legal%3Amodern'>Modern</option>
 					<option value='+legal%3Alegacy'>Legacy</option>
 					<option value='+legal%3Acommander'>Commander</option>
 					<option value='+legal%3Abrawl'>Brawl</option>
