@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Route, Link, Switch } from 'react-router-dom';
 import SearchBarResults from './SearchBarResults';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -34,7 +35,9 @@ function SearchBar(props) {
 		<div className='container'>
 			<Form.Group controlId='exampleForm.ControlSelect1'>
 				<Form onSubmit={handleSubmit}>
-					<Form.Label>MTG Search</Form.Label>
+					<Link to='/'>
+						<Form.Label>MTG Search</Form.Label>
+					</Link>
 					<Form.Control
 						type='text'
 						onChange={handleChange}
@@ -47,12 +50,16 @@ function SearchBar(props) {
 						block>
 						Submit
 					</Button>
-					<Button variant='secondary' size='sm' block>
-						Random Card
-					</Button>
-					<Button variant='secondary' size='sm' block>
-						Filter Cards
-					</Button>
+					<Link to='/random'>
+						<Button variant='secondary' size='sm' block>
+							Random Card
+						</Button>
+					</Link>
+					<Link to='/Filter'>
+						<Button variant='secondary' size='sm' block>
+							Filter Cards
+						</Button>
+					</Link>
 				</Form>
 			</Form.Group>
 			{clickSubmit === true ? (

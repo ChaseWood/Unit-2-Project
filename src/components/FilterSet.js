@@ -7,6 +7,7 @@ function FilterSet(props) {
 
 	const handleChange = (event) => {
 		setSetCode(event.target.value);
+		props.sendSet(setCode);
 	};
 
 	const makeApiCall = async (card) => {
@@ -23,11 +24,11 @@ function FilterSet(props) {
 		makeApiCall();
 	}, []);
 
-	const newFilterArr = set[0]
+	const newFilterArr = set[1]
 		? set.map((item) => {
 				return (
-					<option value={item.code} key={item.id}>
-						<div>+{item.name}</div>
+					<option value={`+set%3A${item.code}`} key={item.id}>
+						{item.name}
 					</option>
 				);
 		  })
@@ -40,7 +41,7 @@ function FilterSet(props) {
 				<Form.Group controlId='exampleForm.ControlSelect1'>
 					<Form.Label>What set is it in?</Form.Label>
 					<Form.Control as='select' onChange={handleChange}>
-						<option></option>
+						<option value=''></option>
 						{newFilterArr}
 					</Form.Control>
 				</Form.Group>

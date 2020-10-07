@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
-function FilterColor(props) {
+function FilterTest(props) {
 	const [color, setColor] = useState('');
 
 	const handleChange = (event) => {
@@ -10,9 +11,17 @@ function FilterColor(props) {
 		props.sendColor(color);
 	};
 
+	const handleSubmit = (event) => {
+		props.makeApiCall;
+		event.preventDefault();
+	};
+
 	return (
-		<div className='container'>
-			<Form.Group controlId='exampleForm.ControlSelect1'>
+		///FILTER COLOR
+		<Form className='container'>
+			<Form.Group
+				onSubmit={handleSubmit}
+				controlId='exampleForm.ControlSelect1'>
 				<Form.Label>Color</Form.Label>
 				<Form.Control as='select' onChange={handleChange}>
 					<option value=''></option>
@@ -22,12 +31,17 @@ function FilterColor(props) {
 					<option value='+c%3Ared'>Red</option>
 					<option value='+c%3Agreen'>Green</option>
 				</Form.Control>
+				<Button
+					className='mt-2'
+					type='submit'
+					variant='primary'
+					size='sm'
+					block>
+					Submit
+				</Button>
 			</Form.Group>
-		</div>
+		</Form>
 	);
 }
-export default FilterColor;
 
-///https://c2.scryfall.com/file/scryfall-symbols/card-symbols/W.svg
-//https://scryfall.com/docs/api/colors
-//above is the link to the SVG to possible add the symbols to the app somehow
+export default FilterTest;

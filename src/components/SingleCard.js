@@ -85,7 +85,7 @@ function SingleCard() {
 		);
 	}
 
-	return <div>{singleCardContainer}</div>;
+	return <>{singleCardContainer}</>;
 }
 
 export default SingleCard;

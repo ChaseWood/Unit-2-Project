@@ -10,17 +10,10 @@ const mtgApi = 'https://api.scryfall.com/cards/';
 
 function App() {
 	const [card, setCard] = useState({});
-	const [fuzzySearch, setFuzzySearch] = useState([]);
-	// const [setCode, setSetCode] = useState('');
-
-	console.log('this is card', card);
 
 	const makeApiCall = async (card) => {
 		const res = await fetch(`https://api.scryfall.com/cards/${card}`);
 		const json = await res.json();
-
-		console.log('this is json data', json);
-		console.log('this is card img', json);
 
 		setCard(json);
 	};
@@ -36,9 +29,16 @@ function App() {
 	return (
 		<div>
 			{/* <Header handleSubmit={handleSubmit} /> */}
-			<SearchBar />
-			<Filter />
-			{/* <RandomCard card={card} /> */}
+
+			<Route exact path='/'>
+				<SearchBar />
+			</Route>
+			<Route exact={true} path='/Filter'>
+				<Filter />
+			</Route>
+			<Route exact={true} path='/random'>
+				<RandomCard card={card} />
+			</Route>
 			{/* <SingleCard /> */}
 		</div>
 	);

@@ -6,6 +6,7 @@ function FilterType(props) {
 
 	const handleChange = (event) => {
 		setType(event.target.value);
+		props.sendType(type);
 	};
 
 	return (
@@ -13,7 +14,7 @@ function FilterType(props) {
 			<Form.Group controlId='exampleForm.ControlSelect1'>
 				<Form.Label>Type</Form.Label>
 				<Form.Control as='select' onChange={handleChange}>
-					<option></option>
+					<option value=''></option>
 					<option value='+t%3Aartifact'>Artifact</option>
 					<option value='+t%3Acreature'>Creature</option>
 					<option value='+t%3Aenchantment'>Enchantment</option>
