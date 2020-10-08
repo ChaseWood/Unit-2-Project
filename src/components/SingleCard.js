@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Card from 'react-bootstrap/Card';
 
 function SingleCard(props) {
+	console.log(props);
 	const [singleCard, setSingleCard] = useState({});
 
 	const makeApiCall = async (card) => {
@@ -9,13 +10,13 @@ function SingleCard(props) {
 			`https://api.scryfall.com/cards/named?exact=${props.match.params.name}`
 		);
 		const json = await res.json();
-
+		console.log(json);
 		setSingleCard(json);
 	};
 
 	useEffect(() => {
 		makeApiCall();
-	}, []);
+	}, [props]);
 
 	let singleCardContainer = '';
 	if (singleCard.name) {

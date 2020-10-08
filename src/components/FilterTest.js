@@ -13,6 +13,11 @@ function FilterTest(props) {
 		color: '',
 		format: '',
 		set: '',
+		white: '',
+		blue: '',
+		black: '',
+		red: '',
+		green: '',
 	});
 
 	const handleChange = (event) => {
@@ -109,6 +114,44 @@ function FilterTest(props) {
 						<option value='+t%3Asorcery'>Sorcery</option>
 						<option value='+t%3Aland'>Land</option>
 					</Form.Control>
+					<div key={`inline-checkbox`} className='mb-3'>
+						<Form.Check
+							inline
+							name='White'
+							value='+c%3Awhite'
+							label='White'
+							type='checkbox'
+							id={`inline-checkbox-1`}
+						/>
+						<Form.Check
+							inline
+							name='Blue'
+							label='Blue'
+							type='checkbox'
+							id={`inline-checkbox-2`}
+						/>
+						<Form.Check
+							inline
+							name='Black'
+							label='Black'
+							type='checkbox'
+							id={`inline-checkbox-3`}
+						/>
+						<Form.Check
+							inline
+							name='Red'
+							label='Red'
+							type='checkbox'
+							id={`inline-checkbox-3`}
+						/>
+						<Form.Check
+							inline
+							name='Green'
+							label='Green'
+							type='checkbox'
+							id={`inline-checkbox-3`}
+						/>
+					</div>
 					<Form.Label>Color</Form.Label>
 					<Form.Control name='color' as='select' onChange={handleChange}>
 						<option value=''></option>
