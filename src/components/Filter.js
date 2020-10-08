@@ -53,17 +53,15 @@ function Filter(props) {
 	const newSearch = searchType + searchColor;
 	console.log(newSearch);
 
-	const makeApiCall = async () => {
-		const res = await fetch(
-			`https://api.scryfall.com/cards/search?q=${searchName}${searchText}${searchType}${searchColor}${searchFormat}${setName}`
-		);
-		const json = await res.json();
+	// const makeApiCall = async () => {
+	// 	const res = await fetch(
+	// 		`https://api.scryfall.com/cards/search?q=${searchName}${searchText}${searchType}${searchColor}${searchFormat}${setName}`
+	// 	);
+	// 	const json = await res.json();
 
-		setAllSearches(json.data);
-		console.log(json);
-	};
-
-	console.log(allSearches);
+	// 	setAllSearches(json.data);
+	// 	console.log(json);
+	// };
 
 	// useEffect(() => {
 	// 	makeApiCall();
