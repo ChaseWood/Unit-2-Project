@@ -13,7 +13,7 @@ function FilterTest(props) {
 
 	const handleSubmit = (event) => {
 		props.makeApiCall;
-		event.preventDefault();
+		// event.preventDefault();
 	};
 
 	return (

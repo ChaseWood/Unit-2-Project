@@ -4,8 +4,6 @@ import Card from 'react-bootstrap/Card';
 function SingleCard(props) {
 	const [singleCard, setSingleCard] = useState({});
 
-	console.log(props.match.params.name);
-
 	const makeApiCall = async (card) => {
 		const res = await fetch(
 			`https://api.scryfall.com/cards/named?exact=${props.match.params.name}`
@@ -41,34 +39,36 @@ function SingleCard(props) {
 							<Card.Text>
 								<div className='container'>
 									<div className='row d-flex'>
-										<div className='col text-right'>CMC:</div>
-										<div className='col text-left'>{singleCard.cmc}</div>
+										<div className='col-4 text-right pr-1'>CMC:</div>
+										<div className='col-8 text-left'>{singleCard.cmc}</div>
 									</div>
 									<div className='row d-flex'>
-										<div className='col text-right'>Type:</div>
-										<div className='col text-left'>{singleCard.type_line}</div>
+										<div className='col-4 text-right pr-1'>Type:</div>
+										<div className='col-8 text-left'>
+											{singleCard.type_line}
+										</div>
 									</div>
 									<div className='row'>
-										<div className='col text-right'>Card Text:</div>
-										<div className='col text-left'>
+										<div className='col-4 text-right pr-1'>Card Text:</div>
+										<div className='col-8 text-left'>
 											{singleCard.oracle_text}
 										</div>
 									</div>
 									<div className='row'>
-										<div className='col text-right'>Rarity:</div>
-										<div className='col text-left'>{singleCard.rarity}</div>
+										<div className='col-4 text-right pr-1'>Rarity:</div>
+										<div className='col-8 text-left'>{singleCard.rarity}</div>
 									</div>
 									<div className='row'>
-										<div className='col text-right'>Expansion:</div>
-										<div className='col text-left'>{singleCard.set_name}</div>
+										<div className='col-4 text-right pr-1'>Expansion:</div>
+										<div className='col-8 text-left'>{singleCard.set_name}</div>
 									</div>
 									<div className='row'>
-										<div className='col text-right'>Artist:</div>
-										<div className='col text-left'>{singleCard.artist}</div>
+										<div className='col-4 text-right pr-1'>Artist:</div>
+										<div className='col-8 text-left'>{singleCard.artist}</div>
 									</div>
 									<div className='row'>
-										<div className='col text-right'>Non-Foil Price:</div>
-										<div className='col text-left'>
+										<div className='col-4 text-right pr-1'>Non-Foil Price:</div>
+										<div className='col-8 text-left'>
 											${singleCard.prices.usd}
 										</div>
 									</div>

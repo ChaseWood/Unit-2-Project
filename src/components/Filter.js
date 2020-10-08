@@ -59,7 +59,7 @@ function Filter(props) {
 	// }, []);
 
 	return (
-		<div className='container'>
+		<div style={{ marginTop: '80px' }} className='container'>
 			<FilterNameSearch sendNameSearch={sendNameSearch} />
 			<FilterText sendText={sendText} />
 			<FilterType sendType={sendType} />

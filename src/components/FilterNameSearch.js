@@ -17,9 +17,6 @@ function FilterNameSearch(props) {
 	return (
 		<Form.Group className='container' controlId='exampleForm.ControlSelect1'>
 			<Form onSubmit={handleSubmit}>
-				<Link to='/'>
-					<Form.Label>MTG Search</Form.Label>
-				</Link>
 				<Form.Label>Card Name</Form.Label>
 				<Form.Control
 					type='text'
