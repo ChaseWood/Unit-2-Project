@@ -16,7 +16,6 @@ function SearchBar(props) {
 		const json = await res.json();
 
 		setFuzzySearchArray(json.data);
-		// console.log('this is fuzzySearchArray', fuzzySearchArray);
 	};
 
 	const handleChange = (event) => {
@@ -36,9 +35,11 @@ function SearchBar(props) {
 			<Form.Group controlId='exampleForm.ControlSelect1'>
 				<Form onSubmit={handleSubmit}>
 					<Form.Control
+						className='form-control-inline'
 						type='text'
 						onChange={handleChange}
 						placeholder='Search'></Form.Control>
+
 					<Button
 						className='mt-2'
 						type='submit'
