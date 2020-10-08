@@ -14,7 +14,7 @@ function FilterFormat(props) {
 			<Form.Group controlId='exampleForm.ControlSelect1'>
 				<Form.Label>Format</Form.Label>
 				<Form.Control as='select' onChange={handleChange}>
-					<option></option>
+					<option value=''></option>
 					<option value='+legal%3Astandard'>Standard</option>
 					<option value='+legal%3Ahistoric'>Historic</option>
 					<option value='+legal%3Amodern'>Modern</option>

@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import Card from 'react-bootstrap/Card';
 
-function SingleCard() {
+function SingleCard(props) {
 	const [singleCard, setSingleCard] = useState({});
+
+	console.log(props.match.params.name);
 
 	const makeApiCall = async (card) => {
 		const res = await fetch(
-			`https://api.scryfall.com/cards/named?exact=cancel`
+			`https://api.scryfall.com/cards/named?exact=${props.match.params.name}`
 		);
 		const json = await res.json();
 
@@ -20,7 +22,9 @@ function SingleCard() {
 	let singleCardContainer = '';
 	if (singleCard.name) {
 		singleCardContainer = (
-			<div className='d-flex p-2 justify-content-center flex-wrap grid-gap-1 align-items-start'>
+			<div
+				style={{ marginTop: '80px' }}
+				className='d-flex p-2 justify-content-center flex-wrap grid-gap-1 align-items-start'>
 				<img
 					className=' mt-3'
 					style={{ objectFit: 'contain', width: '250px', position: 'relative' }}

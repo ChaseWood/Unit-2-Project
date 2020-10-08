@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function SearchBarResults(props) {
 	props.fuzzySearchArray[0]
@@ -9,10 +10,12 @@ function SearchBarResults(props) {
 		? props.fuzzySearchArray.map((item) => {
 				return (
 					<div className='mt-2' key={item.name}>
-						<img
-							src={item.image_uris && item.image_uris.small}
-							alt={item.name}
-						/>
+						<Link to={'/' + item.name}>
+							<img
+								src={item.image_uris && item.image_uris.small}
+								alt={item.name}
+							/>
+						</Link>
 					</div>
 				);
 		  })

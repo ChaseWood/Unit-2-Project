@@ -32,12 +32,9 @@ function SearchBar(props) {
 	};
 
 	return (
-		<div className='container'>
+		<div style={{ marginTop: '80px' }} className='container align-items-center'>
 			<Form.Group controlId='exampleForm.ControlSelect1'>
 				<Form onSubmit={handleSubmit}>
-					<Link to='/'>
-						<Form.Label>MTG Search</Form.Label>
-					</Link>
 					<Form.Control
 						type='text'
 						onChange={handleChange}
@@ -51,12 +48,12 @@ function SearchBar(props) {
 						Submit
 					</Button>
 					<Link to='/random'>
-						<Button variant='secondary' size='sm' block>
+						<Button className='mt-2' variant='secondary' size='sm' block>
 							Random Card
 						</Button>
 					</Link>
 					<Link to='/Filter'>
-						<Button variant='secondary' size='sm' block>
+						<Button className='mt-2' variant='secondary' size='sm' block>
 							Filter Cards
 						</Button>
 					</Link>

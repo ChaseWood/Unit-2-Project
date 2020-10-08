@@ -27,8 +27,8 @@ function App() {
 	};
 
 	return (
-		<div>
-			{/* <Header handleSubmit={handleSubmit} /> */}
+		<div className='container'>
+			<Header handleSubmit={handleSubmit} />
 
 			<Route exact path='/'>
 				<SearchBar />
@@ -39,11 +39,12 @@ function App() {
 			<Route exact={true} path='/random'>
 				<RandomCard card={card} />
 			</Route>
-			{/* <SingleCard /> */}
+			<Route
+				exact={true}
+				path='/:name'
+				render={(routerProps) => <SingleCard {...routerProps} />}></Route>
 		</div>
 	);
 }
 
 export default App;
-
-// useContext or props to pass state back up from grandchild to be used here at APP to change the

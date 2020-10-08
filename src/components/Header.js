@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Route, Link, Switch } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
 import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
@@ -20,19 +21,11 @@ function Header(props) {
 
 	return (
 		<>
-			<Navbar bg='dark' variant='dark' fixed='top'>
-				<Navbar.Brand href='#home'>MTG Card Search</Navbar.Brand>
-				<Form inline className='container' onSubmit={handleSubmit}>
-					<FormControl
-						type='text'
-						placeholder='Name'
-						className='mr-sm-2'
-						onChange={handleChange}
-					/>
-					<Button type='click' variant='outline-info'>
-						Search
-					</Button>
-				</Form>
+			<Navbar bg='dark' variant='dark' className='fixed-top'>
+				<Link to='/'>
+					<Navbar.Brand href='#home'>MTG Card Search</Navbar.Brand>
+				</Link>
+				<Form inline className='container' onSubmit={handleSubmit}></Form>
 			</Navbar>
 		</>
 	);
