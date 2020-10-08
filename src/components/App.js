@@ -30,7 +30,7 @@ function App() {
 		<div className='container'>
 			<Header handleSubmit={handleSubmit} />
 
-			<Route exact path='/'>
+			<Route exact={true} path='/'>
 				<SearchBar />
 			</Route>
 			<Route exact={true} path='/Filter'>

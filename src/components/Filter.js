@@ -17,6 +17,8 @@ function Filter(props) {
 	const [searchFormat, setSearchFormat] = useState('');
 	const [setName, setSetName] = useState('');
 	const [allSearches, setAllSearches] = useState('');
+	// const [submit, setSubmit] = useState('');
+	//THIS IS FOR TH TEST FILTER
 
 	const sendNameSearch = (searchInput) => {
 		setSearchName(searchInput);
@@ -42,6 +44,15 @@ function Filter(props) {
 		setSetName(setCode);
 	};
 
+	//BELOW THIS IS FOR THE TEST FILTER
+	// const handleSubmit = (color) => {
+	// 	setSubmit(color);
+	// 	makeApiCall();
+	// };
+
+	const newSearch = searchType + searchColor;
+	console.log(newSearch);
+
 	const makeApiCall = async () => {
 		const res = await fetch(
 			`https://api.scryfall.com/cards/search?q=${searchName}${searchText}${searchType}${searchColor}${searchFormat}${setName}`
@@ -60,10 +71,10 @@ function Filter(props) {
 
 	return (
 		<div style={{ marginTop: '80px' }} className='container'>
-			<FilterNameSearch sendNameSearch={sendNameSearch} />
+			{/* <FilterNameSearch sendNameSearch={sendNameSearch} />
 			<FilterText sendText={sendText} />
 			<FilterType sendType={sendType} />
-			{/* <FilterColor sendColor={sendColor} /> */}
+			<FilterColor sendColor={sendColor} />
 			<FilterFormat sendFormat={sendFormat} />
 			<FilterSet sendSet={sendSet} />
 			<Button
@@ -75,8 +86,12 @@ function Filter(props) {
 				onClick={makeApiCall}>
 				Submit
 			</Button>
-			<FilterResults />
-			<FilterTest sendColor={sendColor} makeApiCall={makeApiCall} />
+			<FilterResults /> */}
+			<FilterTest
+			// sendColor={sendColor}
+			// makeApiCall={makeApiCall}
+			// handleSubmit={handleSubmit}
+			/>
 		</div>
 	);
 }
