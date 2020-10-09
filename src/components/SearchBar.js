@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Route, Link, Switch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import SearchBarResults from './SearchBarResults';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
-function SearchBar(props) {
+function SearchBar() {
 	const [fuzzySearch, setFuzzySearch] = useState('');
 	const [fuzzySearchArray, setFuzzySearchArray] = useState([]);
 	const [clickSubmit, setClickSubmit] = useState(false);
