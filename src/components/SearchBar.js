@@ -20,11 +20,9 @@ function SearchBar(props) {
 
 	const handleChange = (event) => {
 		setFuzzySearch(event.target.value);
-		console.log('this is fuzzySearch', fuzzySearch);
 	};
 
 	const handleSubmit = (event) => {
-		console.log('this is handleSubmit', fuzzySearch);
 		event.preventDefault();
 		setClickSubmit(true);
 		makeApiCall();
@@ -38,7 +36,7 @@ function SearchBar(props) {
 						className='form-control-inline'
 						type='text'
 						onChange={handleChange}
-						placeholder='Search'></Form.Control>
+						placeholder='Search Name'></Form.Control>
 
 					<Button
 						className='mt-2'

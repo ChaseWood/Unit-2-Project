@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 function FilterResults(props) {
-	props.searchTerms ? console.log(props.searchTerms.data) : null;
-
 	const dataArray = props.searchTerms.data
 		? props.searchTerms.data.map((item) => {
 				if (item.image_uris) {

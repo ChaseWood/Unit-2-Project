@@ -30,7 +30,6 @@ function FilterTest(props) {
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		console.log(state);
 
 		const makeApiCall = async () => {
 			const res = await fetch(
@@ -39,13 +38,10 @@ function FilterTest(props) {
 			const json = await res.json();
 
 			setSearchTerms(json);
-			console.log(json);
 		};
 
 		makeApiCall();
 	};
-
-	console.log(searchTerms);
 
 	const makeApiCall = async (card) => {
 		const res = await fetch('https://api.scryfall.com//sets');
@@ -162,15 +158,7 @@ function FilterTest(props) {
 							id={`inline-checkbox-3`}
 						/>
 					</div>
-					{/* <Form.Label>Color</Form.Label>
-					<Form.Control name='color' as='select' onChange={handleChange}>
-						<option value=''></option>
-						<option value='+c%3Awhite'>White</option>
-						<option value='+c%3Ablue'>Blue</option>
-						<option value='+c%3Ablack'>Black</option>
-						<option value='+c%3Ared'>Red</option>
-						<option value='+c%3Agreen'>Green</option>
-					</Form.Control> */}
+
 					<Form.Label>Format</Form.Label>
 					<Form.Control name='format' as='select' onChange={handleChange}>
 						<option value=''></option>

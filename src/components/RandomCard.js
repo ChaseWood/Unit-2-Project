@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import '../css/style.css';
 import Card from 'react-bootstrap/Card';
 
-function Home(props) {
+function RandomCard(props) {
 	let cardData = '';
 	if (props.card.name) {
 		cardData = (
@@ -76,4 +76,4 @@ function Home(props) {
 	return <>{cardData}</>;
 }
 
-export default Home;
+export default RandomCard;

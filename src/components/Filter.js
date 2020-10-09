@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import FilterTest from './FilterTest';
 
-function Filter(props) {
+function Filter() {
 	return (
 		<div style={{ marginTop: '80px' }} className='container'>
 			<FilterTest />

@@ -1,12 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 function SearchBarResults(props) {
 	if (props.fuzzySearchArray) {
-		props.fuzzySearchArray[0]
-			? console.log('this is props.fuzzySearchArray', props.fuzzySearchArray[0])
-			: null;
-
 		const searchResultsArray = props.fuzzySearchArray[0]
 			? props.fuzzySearchArray.map((item) => {
 					if (item.image_uris) {
@@ -47,5 +43,3 @@ function SearchBarResults(props) {
 }
 
 export default SearchBarResults;
-
-('https://i.imgur.com/eDjHXRP.jpg');
