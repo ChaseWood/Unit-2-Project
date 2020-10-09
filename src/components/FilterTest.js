@@ -26,11 +26,6 @@ function FilterTest(props) {
 		} else {
 			setState({ ...state, [event.target.name]: event.target.value });
 		}
-		// const value = event.target.value;
-		// setState({
-		// 	...state,
-		// 	[event.target.name]: value,
-		// });
 	};
 
 	const handleSubmit = (event) => {

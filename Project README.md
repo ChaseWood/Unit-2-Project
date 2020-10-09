@@ -3,7 +3,7 @@
 ## Project Links
 
 - [add your github repo link](https://github.com/ChaseWood/Unit-2-Project)
-- [add your deployment link]()
+- [add your deployment link](https://mtgcardsearch.netlify.app/)
 
 ## Project Description
 
@@ -25,12 +25,9 @@ object": "card",
 
 Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe. Also, define the the React components and the architectural design of your app.
 
-- [add link to your wireframes]()
-- [add link to your react architecture]()
-
-### MVP/PostMVP - 5min
-
-The functionality will then be divided into two separate lists: MPV and PostMVP. Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.
+- [Mobile wire frames](https://i.imgur.com/fDvRDxv.jpg)
+- [Laptop wire frames](https://i.imgur.com/ix1cpr7.jpg)
+- [React Architecture](https://i.imgur.com/if5mZbR.jpg)
 
 #### MVP EXAMPLE
 
@@ -63,35 +60,58 @@ Based on the initial logic defined in the previous sections try and breakdown th
 | List of Filtered Cards  |                  This will show a list of the filtered cards on mobile                   |
 | Footer                  |                       This will render the header include the nav                        |
 
-Time frames are also key in the development cycle. You have limited time to code all phases of the game. Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe. Also, put a gif at the top of your Readme before you pitch, and you'll get a panda prize.
+## Time Frame
 
-| Component                     | Priority | Estimated Time | Time Invetsted | Actual Time |
-| ----------------------------- | :------: | :------------: | :------------: | :---------: |
-| App                           |    H     |      2hrs      |      hrs       |     hrs     |
-| Header                        |    L     |      1hrs      |      hrs       |     hrs     |
-| Main                          |    M     |      5hrs      |      hrs       |     hrs     |
-| Search Bar                    |    H     |      3hrs      |      hrs       |     hrs     |
-| Filter Button                 |    H     |      1hrs      |      hrs       |     hrs     |
-| Mobile Card                   |    H     |      2hrs      |      hrs       |     hrs     |
-| Filter Card                   |    H     |      6hrs      |      hrs       |     hrs     |
-| Reset Button                  |    M     |      1hrs      |      hrs       |     hrs     |
-| Array of Filtered Cards       |    H     |      3hrs      |      hrs       |     hrs     |
-| List of Filtered Cards        |    H     |      3hrs      |      hrs       |     hrs     |
-| Footer                        |    L     |      1hrs      |      hrs       |     hrs     |
-| Working with API              |    M     |      5hrs      |      hrs       |     hrs     |
-| Making mobile/laptop friendly |    H     |      5hrs      |      hrs       |     hrs     |
-| Total                         |    H     |     38hrs      |      hrs       |     hrs     |
+| Component                     | Priority | Estimated Time | Total Time |
+| ----------------------------- | :------: | :------------: | :--------: |
+| App                           |    H     |      2hrs      |   .5hrs    |
+| Header                        |    L     |      1hrs      |   .5hrs    |
+| Main                          |    M     |      5hrs      |    0hrs    |
+| Search Bar                    |    H     |      3hrs      |    3hrs    |
+| Filter Button                 |    H     |      1hrs      |   .5hrs    |
+| Mobile Card                   |    H     |      2hrs      |    3hrs    |
+| Filter Form                   |    H     |      6hrs      |   13hrs    |
+| Reset Button                  |    M     |      1hrs      |    0hrs    |
+| Array of Filtered Cards       |    H     |      3hrs      |    7hrs    |
+| List of Filtered Cards        |    H     |      3hrs      |    0hrs    |
+| Footer                        |    L     |      1hrs      |    0hrs    |
+| Working with API              |    M     |      5hrs      |   15hrs    |
+| Making mobile/laptop friendly |    H     |      5hrs      |    1hrs    |
+| Total                         |    H     |     38hrs      |  43.5hrs   |
 
 ## Additional Libraries
 
 - Bootstrap
+- Scryfall API
 
 ## Code Snippet
 
-Use this section to include a brief code snippet of functionality that you are proud of an a brief description. Code snippet should not be greater than 10 lines of code.
+It is not very crazy but implementing one single state for multiple drop downs bars, search bars, and check boxes felt really good! Also figuring out how to get checkboxes to finally work using the if statement to check it first.
 
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
-}
+function FilterTest(props) {
+	const [searchTerms, setSearchTerms] = useState({});
+	const [data, setData] = useState({});
+	const [state, setState] = useState({
+		cardName: '',
+		cardText: '',
+		type: '',
+		color: '',
+		format: '',
+		set: '',
+		white: '',
+		blue: '',
+		black: '',
+		red: '',
+		green: '',
+	});
+
+	const handleChange = (event) => {
+		if (event.target.type === 'checkbox' && !event.target.checked) {
+			setState({ ...state, [event.target.name]: '' });
+		} else {
+			setState({ ...state, [event.target.name]: event.target.value });
+		}
+	};
+
 ```
