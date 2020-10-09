@@ -21,11 +21,16 @@ function FilterTest(props) {
 	});
 
 	const handleChange = (event) => {
-		const value = event.target.value;
-		setState({
-			...state,
-			[event.target.name]: value,
-		});
+		if (event.target.type === 'checkbox' && !event.target.checked) {
+			setState({ ...state, [event.target.name]: '' });
+		} else {
+			setState({ ...state, [event.target.name]: event.target.value });
+		}
+		// const value = event.target.value;
+		// setState({
+		// 	...state,
+		// 	[event.target.name]: value,
+		// });
 	};
 
 	const handleSubmit = (event) => {
@@ -34,7 +39,7 @@ function FilterTest(props) {
 
 		const makeApiCall = async () => {
 			const res = await fetch(
-				`https://api.scryfall.com/cards/search?q=${state.cardName}${state.cardText}${state.type}${state.color}${state.format}${state.set}`
+				`https://api.scryfall.com/cards/search?q=${state.cardName}${state.cardText}${state.type}${state.white}${state.blue}${state.black}${state.red}${state.green}${state.format}${state.set}`
 			);
 			const json = await res.json();
 
@@ -114,45 +119,55 @@ function FilterTest(props) {
 						<option value='+t%3Asorcery'>Sorcery</option>
 						<option value='+t%3Aland'>Land</option>
 					</Form.Control>
+					<Form.Label>Color</Form.Label>
 					<div key={`inline-checkbox`} className='mb-3'>
 						<Form.Check
+							onChange={handleChange}
 							inline
-							name='White'
+							name='white'
 							value='+c%3Awhite'
-							label='White'
+							label='white'
 							type='checkbox'
 							id={`inline-checkbox-1`}
 						/>
 						<Form.Check
+							onChange={handleChange}
 							inline
-							name='Blue'
+							name='blue'
+							value='+c%3Ablue'
 							label='Blue'
 							type='checkbox'
 							id={`inline-checkbox-2`}
 						/>
 						<Form.Check
+							onChange={handleChange}
 							inline
-							name='Black'
+							name='black'
+							value='+c%3Ablack'
 							label='Black'
 							type='checkbox'
 							id={`inline-checkbox-3`}
 						/>
 						<Form.Check
+							onChange={handleChange}
 							inline
-							name='Red'
+							name='red'
+							value='+c%3Ared'
 							label='Red'
 							type='checkbox'
 							id={`inline-checkbox-3`}
 						/>
 						<Form.Check
+							onChange={handleChange}
 							inline
-							name='Green'
+							name='green'
+							value='+c%3Agreen'
 							label='Green'
 							type='checkbox'
 							id={`inline-checkbox-3`}
 						/>
 					</div>
-					<Form.Label>Color</Form.Label>
+					{/* <Form.Label>Color</Form.Label>
 					<Form.Control name='color' as='select' onChange={handleChange}>
 						<option value=''></option>
 						<option value='+c%3Awhite'>White</option>
@@ -160,7 +175,7 @@ function FilterTest(props) {
 						<option value='+c%3Ablack'>Black</option>
 						<option value='+c%3Ared'>Red</option>
 						<option value='+c%3Agreen'>Green</option>
-					</Form.Control>
+					</Form.Control> */}
 					<Form.Label>Format</Form.Label>
 					<Form.Control name='format' as='select' onChange={handleChange}>
 						<option value=''></option>
